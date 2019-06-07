@@ -1,5 +1,7 @@
 FROM ruby:2.5.1
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y curl postgresql-client
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get install -y nodejs
 RUN gem install bundle
 RUN mkdir /myapp
 WORKDIR /myapp
