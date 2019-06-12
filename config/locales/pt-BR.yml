@@ -11,24 +11,17 @@ pt-BR:
         invalid_foreign_key: 'Não é possível excluir o registro, pois existem registros associados a ele. Por favor, somente desative o registro.'
         statement_invalid: 'Não é possível excluir o registro, pois existem registros associados a ele. Por favor, remova os registros filhos para contiuar.'
   menu:
-    user: Usuários
-    news: Notícias
-    car_type: Tipos de Veículos
-    car: Veículos
-    client: Clientes
-    financial_car: Financeiras
-    maintenance: Tipos de Manutenções
-    maintenance_car: Manutenções
-    sale: Registros de Vendas
-    coefficient: Coeficientes
-    scale: Escalas
+    projetos: Meus Projetos
+    logout: Sair
+    login: Entrar
+    register: Registrar-se
   activerecord:
     models:
       project: Projeto
     attributes:
       project:
         title: Título
-        description: Descrição
+        descripton: Descrição
         image: Imagem
         goal: Meta
         amount: Montante

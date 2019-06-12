@@ -18,10 +18,11 @@
         <ul class="right hide-on-med-and-down">
           <% if user_signed_in? %>
             <li><%= link_to current_user.email, edit_user_registration_path %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to t('menu.projetos'), projects_path %></li>
+            <li><%= link_to t('menu.logout'), destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li><%= link_to "Registrar-se", new_user_registration_path %></li>
-            <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to t('menu.register'), new_user_registration_path %></li>
+            <li><%= link_to t('menu.login'), new_user_session_path %></li>
           <% end %>
         </ul>
       </div>
