@@ -17,11 +17,18 @@ pt-BR:
     register: Registrar-se
   activerecord:
     models:
-      project: Projeto
+      project: Projetos
+      user: Usuário
     attributes:
+      user:
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmar senha
       project:
         title: Título
         descripton: Descrição
         image: Imagem
         goal: Meta
         amount: Montante
+  auth:
+    login: Entrar
