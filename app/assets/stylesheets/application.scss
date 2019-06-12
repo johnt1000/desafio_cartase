@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+@import "materialize";
+@import "material_icons";
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
