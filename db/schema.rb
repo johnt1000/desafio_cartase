@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_12_013719) do
+ActiveRecord::Schema.define(version: 2019_06_12_035731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,12 @@ ActiveRecord::Schema.define(version: 2019_06_12_013719) do
     t.string "title", null: false
     t.text "descripton"
     t.string "image"
-    t.decimal "amount", precision: 8, scale: 2, null: false
+    t.decimal "amount", precision: 8, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.decimal "goal", precision: 8, scale: 2, null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,4 +39,5 @@ ActiveRecord::Schema.define(version: 2019_06_12_013719) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "projects", "users"
 end

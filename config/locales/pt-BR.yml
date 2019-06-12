@@ -1,0 +1,34 @@
+# encoding: UTF-8
+pt-BR:
+  flash:
+    messages:
+      create: 'Registro criado com sucesso.'
+      update: 'Registro atulizado com sucesso.'
+      destroy: 'Registro deletado com sucesso.'
+      activate: 'Registro ativado com sucesso.'
+      disable: 'Registro desativado com sucesso.'
+      alert:
+        invalid_foreign_key: 'Não é possível excluir o registro, pois existem registros associados a ele. Por favor, somente desative o registro.'
+        statement_invalid: 'Não é possível excluir o registro, pois existem registros associados a ele. Por favor, remova os registros filhos para contiuar.'
+  menu:
+    projetos: Meus Projetos
+    logout: Sair
+    login: Entrar
+    register: Registrar-se
+  activerecord:
+    models:
+      project: Projetos
+      user: Usuário
+    attributes:
+      user:
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmar senha
+      project:
+        title: Título
+        descripton: Descrição
+        image: Imagem
+        goal: Meta
+        amount: Montante
+  auth:
+    login: Entrar
