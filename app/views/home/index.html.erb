@@ -1,0 +1,16 @@
+<h1>Home#index</h1>
+
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <p><%= project.title %></p>
+      <p><%= project.descripton %></p>
+      <p><%= project.image %></p>
+      <p><%= project.goal %></p>
+      <p><%= project.amount %></p>
+      <p><%= link_to 'Show', project %></p>
+      <p><%= link_to 'Edit', edit_project_path(project) %></p>
+      <p><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </li>
+  <% end %>
+</ul>
