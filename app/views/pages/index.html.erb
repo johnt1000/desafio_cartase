@@ -23,7 +23,7 @@
           <% end %>
         </div>
         <div class="card-content">
-          <%= project.descripton.html_safe %>
+          <%= truncate(project.descripton.html_safe, length: 210) %>
         </div>
         <div class="card-action">
           <%= link_to 'Mais detalhes', "/project/#{project.id}" %>
