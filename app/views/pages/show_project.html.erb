@@ -34,21 +34,11 @@
     </div>
     Listagem de doações
     <div class="collection">
-      <% @projects.donate.each do |donate| %>
-        <tr>
-          <td><%= project.title %></td>
-          <td>R$ <%= project.goal %></td>
-          <td>R$ <%= project.amount %></td>
-          <td colspan="3">
-            <%= link_to 'Visualizar', "/project/#{project.id}", class: "btn waves-effect waves-light" %>
-            <%= link_to 'Editar', edit_project_path(project), class: "btn waves-effect waves-light" %>
-            <%= link_to 'Remover', project, method: :delete, data: { confirm: 'Confirma a ação?' }, class: "btn waves-effect waves-light" %>
-          </td>
-        </tr>
-        <a href="#!" class="collection-item"><span class="badge">1</span>Alan</a>
-      <a href="#!" class="collection-item"><span class="new badge">4</span>Alan</a>
-      <a href="#!" class="collection-item">Alan</a>
-      <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
+      <% @project.donates.each do |donate| %>
+        <span class="badge">
+          <%= donate.created_at %>
+        </span>
+        R$ <%= donate.donate %>
       <% end %>
     </div>
   </div>
