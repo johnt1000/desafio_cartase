@@ -1,10 +1,11 @@
 <h1>Novo Projeto</h1>
 <div class="row">
+  <div class="divider"></div>
   <div class="section">
-    <%= render 'form', project: @project %>
+    <%= link_to 'Voltar', projects_path, class: "btn waves-effect waves-light" %>
   </div>
   <div class="divider"></div>
   <div class="section">
-    <%= link_to 'Listagem', projects_path, class: "btn waves-effect waves-light" %>
+    <%= render 'form', project: @project %>
   </div>
 </div>
