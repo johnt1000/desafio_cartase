@@ -17,7 +17,7 @@ pt-BR:
     register: Registrar-se
   activerecord:
     models:
-      project: Projetos
+      project: Projeto
       user: Usuário
     attributes:
       user:
