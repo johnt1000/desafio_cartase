@@ -12,6 +12,7 @@ pt-BR:
         statement_invalid: 'Não é possível excluir o registro, pois existem registros associados a ele. Por favor, remova os registros filhos para contiuar.'
   menu:
     projetos: Meus Projetos
+    doacoes: Minhas Doações
     logout: Sair
     login: Entrar
     register: Registrar-se
@@ -19,7 +20,10 @@ pt-BR:
     models:
       project: Projeto
       user: Usuário
+      donate: Doação
     attributes:
+      donate:
+        donate: Valor
       user:
         email: E-mail
         password: Senha

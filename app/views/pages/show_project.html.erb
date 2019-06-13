@@ -13,24 +13,40 @@
   </div>
 
   <div class="col s4">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">R$ <%= @project.amount %></span>
-        <p>Você pode ser um apoiador, junte-se a nós. ;-)</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Nunc at lectus malesuada, dapibus est at, elementum magna.
-          Suspendisse tempor leo et urna tincidunt viverra
-        </p>
-        <br>
-        <p>
-          Meta:<span class="green-text"> <b>R$ <%= @project.goal %></b></span>
-        </p>
+    <div class="section">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">R$ <%= @project.donates.sum(:donate) %></span>
+          <p>Você pode ser um apoiador, junte-se a nós. ;-)</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nunc at lectus malesuada, dapibus est at, elementum magna.
+            Suspendisse tempor leo et urna tincidunt viverra
+          </p>
+          <br>
+          <p>
+            Meta:<span class="green-text"> <b>R$ <%= @project.goal %></b></span>
+          </p>
+        </div>
+        <div class="card-action">
+          <a href="<%= "/donate/#{@project.id}" %>">Apoiar</a>
+          <a href="<%= root_path %>">Mais projetos</a>
+        </div>
       </div>
-      <div class="card-action">
-        <a href="#">Apoiar</a>
-        <a href="<%= root_path %>">Mais projetos</a>
-      </div>
+    </div>
+    
+    <div class="divider"></div>
+
+    <div class="section">
+      <h6>Apoiadores</h6>
+      <div class="divider"></div>
+      <ul class="collection">
+        <% @project.donates.each do |donate| %>
+          <li class="collection-item">
+            R$ <%= donate.donate %> - <%= donate.user.email %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

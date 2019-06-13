@@ -1,0 +1,36 @@
+<div class="row">
+  <%= form_with(model: donate, local: true, class: "col s12") do |form| %>
+
+    <div class="row">
+      <div class="input-field col s12"> 
+        <% if donate.errors.any? %>
+          <div id="error_explanation">
+            <h5 class="red-text">
+              <%= pluralize(donate.errors.count, "erros") %> encontrado(s).
+            </h5>
+            <ul>
+            <% donate.errors.full_messages.each do |message| %>
+              <li class="red-text"><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= form.hidden_field :project_id, value: @project.id %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
+        <%= form.text_field :donate %>
+        <%= form.label :donate %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <%= form.submit class: "btn waves-effect waves-light" %>
+      </div>
+    </div>
+  <% end %>
+</div>

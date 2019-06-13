@@ -1,0 +1,30 @@
+<h1>Doação</h1>
+<div class="row">
+  <div class="divider"></div>
+  <div class="section">
+    <%= link_to 'Voltar', "/project/#{@project.id}", class: "btn waves-effect waves-light" %>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <p>
+        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+        posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel,
+        ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus.
+        Proin eget tortor risus.
+        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+        posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel,
+        ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus.
+        Proin eget tortor risus.
+    </p>
+    <ul>
+        <li><b>Título:</b> <%= @project.title %></li>
+        <li><b>Dono:</b> <%= @project.user.email %></li>
+        <li><b>Meta:</b> R$ <%= @project.goal %></li>
+        <li><b>Arrecadado:</b> R$ <%= @project.donates.sum(:donate) %></li>
+    </ul>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <%= render 'form', donate: @donate %>
+  </div>
+</div>
