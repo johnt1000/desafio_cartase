@@ -2,7 +2,7 @@
 <div class="row">
   <div class="divider"></div>
   <div class="section">
-    <%= link_to 'Voltar', "/donate/#{@project.id}", class: "btn waves-effect waves-light" %>
+    <%= link_to 'Voltar', "/project/#{@project.id}", class: "btn waves-effect waves-light" %>
   </div>
   <div class="divider"></div>
   <div class="section">
@@ -20,7 +20,7 @@
         <li><b>Título:</b> <%= @project.title %></li>
         <li><b>Dono:</b> <%= @project.user.email %></li>
         <li><b>Meta:</b> R$ <%= @project.goal %></li>
-        <li><b>Arrecadado:</b> R$ <%= @project.amount %></li>
+        <li><b>Arrecadado:</b> R$ <%= @project.donates.sum(:donate) %></li>
     </ul>
   </div>
   <div class="divider"></div>
