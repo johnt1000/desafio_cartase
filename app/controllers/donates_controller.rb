@@ -1,4 +1,5 @@
 class DonatesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_donate, only: [:show]
   before_action :set_project, only: [:new]
 
@@ -26,7 +27,7 @@ class DonatesController < ApplicationController
 
     respond_to do |format|
       if @donate.save
-        format.html { redirect_to @donate, notice: 'Donate was successfully created.' }
+        format.html { redirect_to @donate, notice: 'Doação registrada. \o/' }
         format.json { render :show, status: :created, location: @donate }
       else
         format.html { render :new }
