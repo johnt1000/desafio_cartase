@@ -17,7 +17,7 @@
     <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
-          <%= link_to project do %>
+          <%= link_to "/project/#{project.id}" do %>
             <img src="<%= project.image.thumb.url %>">
             <span class="card-title"><%= project.title %></span>
           <% end %>
@@ -26,7 +26,7 @@
           <%= project.descripton.html_safe %>
         </div>
         <div class="card-action">
-          <%= link_to 'Mais detalhes', project %>
+          <%= link_to 'Mais detalhes', "/project/#{project.id}" %>
         </div>
       </div>
     </div>
