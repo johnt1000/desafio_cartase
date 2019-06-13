@@ -29,7 +29,9 @@
           </p>
         </div>
         <div class="card-action">
-          <a href="<%= "/donate/#{@project.id}" %>">Apoiar</a>
+          <% unless @project.donates.sum(:donate) >= 500 %>
+            <a href="<%= "/donate/#{@project.id}" %>">Apoiar</a>
+          <% end %>
           <a href="<%= root_path %>">Mais projetos</a>
         </div>
       </div>

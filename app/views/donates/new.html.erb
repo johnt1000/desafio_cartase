@@ -21,6 +21,7 @@
         <li><b>Dono:</b> <%= @project.user.email %></li>
         <li><b>Meta:</b> R$ <%= @project.goal %></li>
         <li><b>Arrecadado:</b> R$ <%= @project.donates.sum(:donate) %></li>
+        <li><b>Valor máximo para doação:</b> R$ <%= 500 - @project.donates.sum(:donate) %></li>
     </ul>
   </div>
   <div class="divider"></div>
