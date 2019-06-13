@@ -1,0 +1,22 @@
+<h1>Minhas Doações</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Valor</th>
+      <th>Projeto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @donates.each do |donate| %>
+      <tr>
+        <td><%= donate.donate %></td>
+        <td><%= donate.project.title %></td>
+        <td>
+          <%= link_to 'Visualizar', donate, class: "btn waves-effect waves-light" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

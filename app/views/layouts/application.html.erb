@@ -18,6 +18,7 @@
         <ul class="right hide-on-med-and-down">
           <% if user_signed_in? %>
             <li><%= link_to current_user.email, edit_user_registration_path %></li>
+            <li><%= link_to t('menu.doacoes'), donates_path %></li>
             <li><%= link_to t('menu.projetos'), projects_path %></li>
             <li><%= link_to t('menu.logout'), destroy_user_session_path, method: :delete %></li>
           <% else %>
@@ -28,11 +29,14 @@
       </div>
     </nav>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <div class="container">
       <div class="section">
+        <p class="notice green-text">
+          <b><%= notice %></b>
+        </p>
+        <p class="alert red-text">
+          <b><%= alert %></b>
+        </p>
         <%= yield %>
       </div>
       <br><br>
@@ -69,7 +73,7 @@
       </div>
       <div class="footer-copyright">
         <div class="container">
-        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+          Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
         </div>
       </div>
     </footer>

@@ -1,15 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Projects</h1>
+<h1>Meus Projetos</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Descripton</th>
-      <th>Image</th>
-      <th>goal</th>
-      <th>Amount</th>
+      <th>Título</th>
+      <th>Meta</th>
+      <th>Arrecadado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,13 +14,13 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.title %></td>
-        <td><%= project.descripton %></td>
-        <td><%= project.image %></td>
-        <td><%= project.goal %></td>
-        <td><%= project.amount %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>R$ <%= project.goal %></td>
+        <td>R$ <%= project.donates.sum(:donate) %></td>
+        <td colspan="3">
+          <%= link_to 'Visualizar', "/project/#{project.id}", class: "btn waves-effect waves-light" %>
+          <%= link_to 'Editar', edit_project_path(project), class: "btn waves-effect waves-light" %>
+          <%= link_to 'Remover', project, method: :delete, data: { confirm: 'Confirma a ação?' }, class: "btn waves-effect waves-light" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'Novo Projeto', new_project_path, class: "btn waves-effect waves-light" %>

@@ -12,23 +12,27 @@ pt-BR:
         statement_invalid: 'Não é possível excluir o registro, pois existem registros associados a ele. Por favor, remova os registros filhos para contiuar.'
   menu:
     projetos: Meus Projetos
+    doacoes: Minhas Doações
     logout: Sair
     login: Entrar
     register: Registrar-se
   activerecord:
     models:
-      project: Projetos
+      project: Projeto
       user: Usuário
+      donate: Doação
     attributes:
+      donate:
+        donate: Valor
       user:
         email: E-mail
         password: Senha
         password_confirmation: Confirmar senha
+        remember_me: Lembrar de mim
+        current_password: Senha atual
       project:
         title: Título
         descripton: Descrição
         image: Imagem
         goal: Meta
         amount: Montante
-  auth:
-    login: Entrar

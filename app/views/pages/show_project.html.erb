@@ -1,0 +1,54 @@
+<div class="row">
+  <h4 class="center-align"><%= @project.title %></h4>
+  <h6 class="center-align"><%= @project.user.email %></h6>
+</div>
+<div class="row">
+  
+  <div class="col s8">
+    <%= image_tag(@project.image.url, width: "100%", alt: "Imagem") %>
+    <div class="divider"></div>
+    <div class="section">
+      <%= @project.descripton %>
+    </div>
+  </div>
+
+  <div class="col s4">
+    <div class="section">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">R$ <%= @project.donates.sum(:donate) %></span>
+          <p>Você pode ser um apoiador, junte-se a nós. ;-)</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Nunc at lectus malesuada, dapibus est at, elementum magna.
+            Suspendisse tempor leo et urna tincidunt viverra
+          </p>
+          <br>
+          <p>
+            Meta:<span class="green-text"> <b>R$ <%= @project.goal %></b></span>
+          </p>
+        </div>
+        <div class="card-action">
+          <% unless @project.donates.sum(:donate) >= 500 %>
+            <a href="<%= "/donate/#{@project.id}" %>">Apoiar</a>
+          <% end %>
+          <a href="<%= root_path %>">Mais projetos</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="divider"></div>
+
+    <div class="section">
+      <h6>Apoiadores</h6>
+      <div class="divider"></div>
+      <ul class="collection">
+        <% @project.donates.each do |donate| %>
+          <li class="collection-item">
+            R$ <%= donate.donate %> - <%= donate.user.email %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

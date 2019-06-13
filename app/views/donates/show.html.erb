@@ -1,0 +1,39 @@
+<h1>Doação</h1>
+<div class="row">
+  <div class="divider"></div>
+  <div class="section">
+    <%= link_to 'Voltar ao Projeto', "/project/#{@donate.project.id}", class: "btn waves-effect waves-light" %>
+    <%= link_to 'Minhas Doações', donates_path, class: "btn waves-effect waves-light" %>
+  </div>
+  <div class="divider"></div>
+  <div class="section">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Donec varius erat eget est rutrum fringilla. Aliquam consectetur
+      vel lorem vel accumsan. Praesent magna velit, consectetur vel
+      blandit et, viverra vitae sapien. Vestibulum a augue porta,
+      maximus augue id, rutrum elit. Sed commodo ut sem tincidunt
+      pharetra. Nunc eleifend imperdiet metus, sed dignissim mi
+      ullamcorper in. Nulla et laoreet augue.
+      Vestibulum sagittis felis elit, vitae cursus libero ullamcorper
+      nec. Donec dapibus, ex quis vehicula bibendum, elit tortor tempor
+      lacus, eu dapibus tellus tellus non quam. Cras ac nisi id odio
+      placerat malesuada vitae et diam. Vivamus volutpat gravida ipsum,
+      ac efficitur dui accumsan non. Maecenas vel tempor nibh. Curabitur
+      a eleifend neque. Nullam ultricies hendrerit quam quis lobortis.
+      Etiam pulvinar tortor eget risus mollis ullamcorper. Ut luctus
+      lorem in lacinia bibendum. Vivamus posuere et dolor in mollis.
+      Maecenas augue nibh, vehicula vitae diam tempor, dictum malesuada
+      nisi. In venenatis, diam quis auctor vulputate, ante ipsum finibus diam,
+      vitae suscipit nisi quam sit amet nisl. Praesent elit odio, sollicitudin
+      ac tellus vehicula, porttitor sodales tellus. Maecenas placerat,
+      neque volutpat varius facilisis, odio quam efficitur dui, vel scelerisque
+      nibh ex in elit. Curabitur nec fermentum sapien.
+    <ul>
+      <li><strong>Projeto:</strong> <%= @donate.project.title %></li>
+      <li><strong>Apoiador:</strong> <%= @donate.user.email %></li>
+      <li><strong>Valor:</strong> R$ <%= @donate.donate %></li>
+    </ul>
+  </div>
+  
+</div>
